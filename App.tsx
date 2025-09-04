@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
 
 export default function App() {
-  const age = 24;
-  const licenseyears = 1;
+  const age = 20;
+  const licenseyears = 5;
   let feedback = '';
 
   if (age >= 18) 
@@ -23,10 +23,25 @@ export default function App() {
 
 
   return (
+    
     <View style={styles.container}>
-     <Text style={styles.response}> {feedback} {/* This is my message to be displayed to the user*/} </Text> 
-     
+      <SafeAreaView>
+
+        {/* Add a custom and other text component specific styles to the Heading */}
+
+      <Text style={[styles.response,{fontSize:48, marginBottom:15, textAlign: 'center', color:'yellow'}]}> Driving  License Checker </Text>
+      {/* Added an image */}
+
+      <Image source={{uri:'https://www.autoshippers.co.uk/blog/wp-content/uploads/bugatti-centodieci.jpg',}} style={styles.image}/>
+      {/* Response and User values displayed */}
+
+      <Text style={styles.response}> Age: {age} </Text>
+      <Text style={styles.response}> License Years: {licenseyears} </Text>
+
+     <Text style={[styles.response, {fontSize:40, marginBottom:15, textAlign: 'center', color:'green'}]}> {feedback} {/* This is my message to be displayed to the user*/} </Text> 
+     </SafeAreaView>
     </View>
+    
   );
 }
 
@@ -42,5 +57,14 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     color: 'white',
+    marginTop: 5,
+    textAlign: 'center',
+  },
+
+  image: {
+    width: '100%',
+    height: '70%',
+    resizeMode: 'cover',
+    top: 0,
   }
 });
