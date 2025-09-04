@@ -24,8 +24,9 @@ export default function App() {
 
   return (
     
-    <View style={styles.container}>
-      <SafeAreaView>
+    <SafeAreaView style={styles.container}>
+    <View style={styles.content} >
+      
 
         {/* Add a custom and other text component specific styles to the Heading */}
 
@@ -39,8 +40,9 @@ export default function App() {
       <Text style={styles.response}> License Years: {licenseyears} </Text>
 
      <Text style={[styles.response, {fontSize:40, marginBottom:15, textAlign: 'center', color:'green'}]}> {feedback} {/* This is my message to be displayed to the user*/} </Text> 
-     </SafeAreaView>
+     
     </View>
+    </SafeAreaView>
     
   );
 }
@@ -53,6 +55,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
+  content: {
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent:'center',
+
+  },
+
   response: {
     fontSize: 28,
     fontWeight: 'bold',
@@ -63,7 +73,7 @@ const styles = StyleSheet.create({
 
   image: {
     width: '100%',
-    height: '70%',
+    height: '30%',
     resizeMode: 'cover',
     top: 0,
   }
