@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView, TextInput } from 'react-native';
 
 export default function App() {
-  const age = 20;
+  const age = 22;
   const licenseyears = 5;
   let feedback = '';
 
@@ -18,7 +18,29 @@ export default function App() {
         else 
       {
           feedback = 'You are not yet eligible to drive.'
-      }   
+      }  
+      
+      // adding a SWITCH STATEMENT
+      let drivingBank = '';
+      switch (licenseyears) {
+          case 0: 
+            drivingBank = 'Newbie drivere';
+            break;
+          case 1:
+            drivingBank = 'Rookie with 1 year of driving experience';
+            break;
+          case 2: 
+            drivingBank = 'Intermediate driver with 2 years of driving experience';
+            break;
+          case 3:
+          case 4: 
+            drivingBank = 'Experience driver';
+            break; 
+          default:
+            drivingBank = 'Veteran driver with many years of experience';
+
+
+      }
 
 
 
@@ -39,7 +61,11 @@ export default function App() {
       <Text style={styles.response}> Age: {age} </Text>
       <Text style={styles.response}> License Years: {licenseyears} </Text>
 
-     <Text style={[styles.response, {fontSize:40, marginBottom:15, textAlign: 'center', color:'green'}]}> {feedback} {/* This is my message to be displayed to the user*/} </Text> 
+     <Text style={[styles.response, {fontSize:40, marginBottom:15, textAlign: 'center', color:'green'}]}> {feedback} {/* This is my message to be displayed to the user*/} </Text>
+
+      <Text style={[styles.response,{fontSize:28, marginBottom:15, textAlign: 'center', color:'yellow'}]}> Driving Rank: {drivingBank} </Text> 
+
+      <TextInput> Drivers License </TextInput>
      
     </View>
     </SafeAreaView>
